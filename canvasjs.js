@@ -10,6 +10,10 @@ canvas.height =  window.innerHeight;})
 var unitx = Math.floor((50*innerWidth)/1050);   
 var unity = Math.floor((50*innerHeight)/550);   
 
+swal({
+  title: "Press any arrow key to start!",
+    icon:"info"
+});
 
 var colorArray = [ 'red','black','green','blue','yellow']
 var code;
@@ -124,6 +128,16 @@ function draw(){
     for(var j=0;j<snake.length;j++){
         if(newHead.x==snake[j].x && newHead.y==snake[j].y){
             clearInterval(end);
+            
+            swal({
+                title:"GAME OVER!",
+                text:"your score is : "+score,
+                button:"PLAY AGAIN!",
+                closeOnClickOutside: false        
+            }).then(function(){
+                window.location.reload(true);
+            });
+            
         }
     }
     snake.unshift(newHead);
