@@ -10,10 +10,7 @@ canvas.height =  window.innerHeight;})
 var unitx = Math.floor((50*innerWidth)/1050);   
 var unity = Math.floor((50*innerHeight)/550);   
 
-swal({
-  title: "Press any arrow key to start!",
-    icon:"info"
-});
+
 var colorArray = [ 'red','black','green','blue','yellow']
 var code;
 var cod;
